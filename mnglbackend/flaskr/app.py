@@ -4,7 +4,10 @@ import string
 import uuid
 import certifi
 
+
 from flask import Flask, jsonify,request
+from flask_cors import cross_origin
+
 from twilio.jwt.access_token import AccessToken
 from twilio.jwt.access_token.grants import VideoGrant
 from pymongo import MongoClient
@@ -36,6 +39,7 @@ userm = db.users_myngl
 
 
 @app.route('/token')
+@cross_origin()
 def token():
 
     print("1")
