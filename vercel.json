@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "/mnglbackend/flask/app.py",
+        "src": "/mnglbackend/flaskr/app.py",
         "use": "@vercel/python"
       }
     ],
