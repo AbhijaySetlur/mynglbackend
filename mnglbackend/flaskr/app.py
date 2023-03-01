@@ -13,7 +13,8 @@ from twilio.jwt.access_token.grants import VideoGrant
 from pymongo import MongoClient
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://mynglfrontend.vercel.app"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"/*": {"origins": ["https://mynglfrontend.vercel.app", "http://localhost:3000"]}})
 
 # Replace with your Twilio Account SID and API Key SID and Secret
 TWILIO_ACCOUNT_SID = 'ACcd92d71a93040dda88b5f944f37e3e7f'
